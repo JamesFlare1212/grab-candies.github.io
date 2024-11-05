@@ -1,0 +1,96 @@
+@font-face {
+  font-family: Abril Fatface;
+  src: url(./fonts/Abril_Fatface/AbrilFatface-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #485ae2;
+  overflow: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.nav-logo {
+    max-width: 150px; /* Adjust the size of the image */
+    height: auto;
+    cursor: pointer;
+}
+
+.nav-logo:hover {
+    opacity: 0.8; /* Optional hover effect */
+    transform: scale(0.8);
+    transition: transform 0.3s ease-in-out; 
+}
+
+.hover-title {
+  font-family: "Abril Fatface", serif;
+  font-size: 8vw;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  color: #d9d9d9;
+}
+
+.hover-title::before {
+  content: "Lick the lollipop"; /* 默认显示的内容 */
+}
+
+.hover-title:hover::before {
+  content: "Beware of obesity"; /* 鼠标悬停时的内容 */
+  color: #e81674;
+}
+
+.circle {
+  filter: url(#gooey);
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(180deg, #dae8ab, #e81674);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.particles {
+  position: absolute;
+  top: 50%; /* 使粒子生成在 .circle 的中心 */
+  left: 50%;
+  transform: translate(-50%, -50%); /* 从中心开始偏移 */
+  background: linear-gradient(180deg, #dae8ab, #e81674);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.stick {
+  width: 20px;
+  height: 300px;
+  background-color: #d9d9d9;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(var(--x), var(--y));
+  }
+}
+
+svg {
+  width: 0;
+  height: 0;
+}

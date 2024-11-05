@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style8.css" />
+  </head>
+  <body>
+    <div class="navbar">
+        <a href="../homepage/home.html">
+          <img src="./imgs/nav.svg" alt="Home" class="nav-logo" />
+        </a>
+      </div>
+      
+    <h1 id="title" class="hover-title"></h1>
+    <svg>
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+        <feColorMatrix
+          values="
+            1 0 0 0 0
+            0 1 0 0 0
+            0 0 1 0 0
+            0 0 0 50 -10"
+        />
+      </filter>
+    </svg>
+
+    <div class="circle"></div>
+
+    <div class="stick"></div>
+
+    <script>
+      let circle = document.querySelector(".circle");
+
+      circle.addEventListener("click", function () {
+        for (let i = 0; i < 50; i++) {
+          let particles = document.createElement("i");
+          particles.classList.add("particles");
+          circle.appendChild(particles);
+
+          // 随机位置计算应在循环内
+          let randomX = (Math.random() - 0.5) * window.innerWidth;
+          let randomY = (Math.random() - 0.5) * window.innerHeight;
+
+          // 设置每个粒子的x和y属性
+          particles.style.setProperty("--x", randomX + "px");
+          particles.style.setProperty("--y", randomY + "px");
+
+          let randomSize = Math.random() * 180 + 10;
+          particles.style.width = randomSize + "px";
+          particles.style.height = randomSize + "px";
+
+          let duration = Math.random() * 3 + 2;
+          particles.style.animation = `animate ${duration}s ease forwards`;
+
+          // 5秒后移除粒子
+          setTimeout(function () {
+            particles.remove();
+          }, 5000);
+        }
+      });
+    </script>
+  </body>
 </html>
