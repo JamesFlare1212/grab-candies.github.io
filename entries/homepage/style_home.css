@@ -95,7 +95,7 @@ body {
 }
 
 /* Responsive styling for iPhone 16 (example: max-width 430px for mobile) */
-@media (max-width: 530px) {
+@media (max-width: 830px) {
   .title {
     font-size: 5vw;
     top: 0; /* Position title at the very top */
