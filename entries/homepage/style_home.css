@@ -93,3 +93,64 @@ body {
   left: 600px;
   width: 120px;
 }
+
+/* Responsive styling for iPhone 16 (example: max-width 430px for mobile) */
+@media (max-width: 530px) {
+  .title {
+    font-size: 5vw;
+    top: 0; /* Position title at the very top */
+  }
+
+  .image {
+    width: 200px;
+  }
+
+  /* Adjust candy positions for smaller screens */
+  #candy1 {
+    top: 80px ;
+    left: 70px ;
+    width: 50px ;
+  }
+
+  #candy2 {
+    top: 120px;
+    left:120px;
+    width: 45px;
+  }
+
+  #candy3 {
+    top: 60px;
+    left: 120px;
+    width: 50px;
+  }
+
+  #candy4 {
+    top: 160px;
+    left: 60px;
+    width: 40px;
+  }
+
+  #candy5 {
+    top: 100px;
+    left: 0px;
+    width: 45px;
+  }
+
+  #candy6 {
+    top: 70px;
+    left: -100px;
+    width: 60px;
+  }
+
+  #candy7 {
+    top: 160px;
+    left: 260px;
+    width: 45px;
+  }
+
+  #candy8 {
+    top: 40px;
+    left: 240px;
+    width: 55px;
+  }
+}
