@@ -92,8 +92,14 @@ body {
   top: 70px;
   left: 600px;
   width: 120px;
-}
 
+  
+}
+#candy9 {
+  top: 280px;
+  left: -10px;
+  height: 100px;
+}
 /* Responsive styling for iPhone 16 (example: max-width 430px for mobile) */
 @media (max-width: 830px) {
   .title {
@@ -152,5 +158,11 @@ body {
     top: 40px;
     left: 220px;
     width: 55px;
+  }
+
+  #candy9 {
+    top: 40px;
+    left: -220px;
+    height: 10px;
   }
 }
