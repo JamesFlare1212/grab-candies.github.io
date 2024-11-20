@@ -53,27 +53,7 @@ function initializeTileAnimation() {
     
   }
 
-function animateTile(tile, tiltY) {
-  gsap
-  .timeline()
-  .set(tile, {rotateX: isFlipped ? 180 : 0, rotateY: 0})
-  .to(tile, {
-    rotateX: isFlipped ? 450 : 270,
-    rotateY: tiltY,
-    duration: 0.5,
-    ease: 'power2.out',
-  })
-  .to(
-    tile,
-    {
-      rotateX: isFlipped ? 540 : 360,
-      rotateY: 0,
-      duration: 0.5,
-      ease: 'power2.out',
-    },
-    '-=0.25'
-  )
-}
+
 
 function filpAllTiles(tiles) {
   isFlipped = !isFlipped;
