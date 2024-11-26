@@ -104,6 +104,13 @@ body {
   height: 90px;
   rotate: 20deg;
 }
+
+#candy11 {
+  top: 80px;
+  left: 70px;
+  height: 100px;
+  rotate: 20deg;
+}
 /* Responsive styling for iPhone 16 (example: max-width 430px for mobile) */
 @media (max-width: 830px) {
   .title {

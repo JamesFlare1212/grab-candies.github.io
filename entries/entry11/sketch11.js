@@ -11,10 +11,11 @@ function setup() {
   // create an 8.5x11 canvas for printing at 150dpi
   // createCanvas(8.5 * 150, 11 * 150);
   createCanvas(windowWidth, 600);
+  
 
   //defining riso colors
   fluorpink = new Riso("fluorescentpink");
-  cornflower = new Riso("huntergreen");
+  cornflower = new Riso("bisque");
 
   //sliders for parameters
   //PATTERN SIZE
@@ -23,10 +24,11 @@ function setup() {
   decreaseButton = createButton("<");
   decreaseButton.position(width / 2 - 100, height / 2 + 400);
   decreaseButton.style("font-size", "32px");
-  decreaseButton.style("background-color", "blue");
+  decreaseButton.style("background-color", "#FF6521");
   decreaseButton.style("color", "white");
   decreaseButton.style("border", "none");
   decreaseButton.style("padding", "10px 22px");
+  decreaseButton.style("border-radius", "40%");
   decreaseButton.mousePressed(() => {
     if (currentValue > minValue) {
       currentValue--;
@@ -35,19 +37,22 @@ function setup() {
   });
 
   // 创建“你扔掉了糖果纸”的文字说明
-  let decreaseLabel = createP("你扔掉了糖果纸");
+  let decreaseLabel = createP();
   decreaseLabel.position(width / 2 - 95, height / 2 + 450);
   decreaseLabel.style("text-align", "center");
   decreaseLabel.style("color", "black");
 
   // 创建“增大”按钮
   increaseButton = createButton(">");
-  increaseButton.position(width / 2 + 50, height / 2 + 400);
+  // increaseButton.position(width / 2 + 50, height / 2 + 400);
   increaseButton.style("font-size", "32px");
-  increaseButton.style("background-color", "blue");
+  increaseButton.style("background-color", "#FF6521");
   increaseButton.style("color", "white");
   increaseButton.style("border", "none");
   increaseButton.style("padding", "10px 20px");
+  increaseButton.style("border-radius", "40%");
+  increaseButton.style("cursor", "pointer")
+  
   increaseButton.mousePressed(() => {
     if (currentValue < maxValue) {
       currentValue++;
@@ -56,7 +61,7 @@ function setup() {
   });
 
   // 创建“你又吃了一颗糖”的文字说明
-  let increaseLabel = createP("你又吃了一颗糖");
+  let increaseLabel = createP();
   increaseLabel.position(width / 2 + 55, height / 2 + 450);
   increaseLabel.style("text-align", "center");
   increaseLabel.style("color", "black");
@@ -78,10 +83,12 @@ function windowResized() {
 
 function styleButton(button) {
   button.style("font-size", "32px");
-  button.style("background-color", "blue");
+  button.style("background-color", "#FF6521");
   button.style("color", "white");
   button.style("border", "none");
+  button.style("border-radius", "50%"); // 圆形按钮
   button.style("padding", "10px 20px");
+  button.style("cursor", "pointer");
 }
 
 function positionButtons() {
@@ -92,7 +99,7 @@ function positionButtons() {
 
 function draw() {
   //clear canvas and set the background color
-  background(255);
+  background("#B3C9EA");
 
   //clear all Riso layers
   clearRiso();
