@@ -53,8 +53,6 @@ function initializeTileAnimation() {
     
   }
 
-
-
 function filpAllTiles(tiles) {
   isFlipped = !isFlipped;
 
