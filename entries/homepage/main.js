@@ -10,9 +10,9 @@ $(document).ready(function () {
 $(document).ready(function () {
   $("#candy4").draggable();
 });
-$(document).ready(function () {
-  $("#candy5").draggable();
-});
+// $(document).ready(function () {
+//   $("#candy5").draggable();
+// });
 $(document).ready(function () {
   $("#candy6").draggable();
 });
