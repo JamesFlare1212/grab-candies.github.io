@@ -88,3 +88,13 @@ h1 a {
   letter-spacing: 0.1em;
   font-family: "Abril Fatface";
 }
+
+@media (max-width: 768px) {
+  .text {
+    font-family: "Poppins";
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 2.5vw;
+  }
+}
