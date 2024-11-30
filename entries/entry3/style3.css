@@ -72,6 +72,9 @@ a {
   background-size: cover;
   height: 100vh;
   z-index: -1;
+  display: flex;
+  justify-content: center; /* 水平方向居中 */
+  align-items: center; /* 垂直方向居中 */
 }
 
 .text {
@@ -91,4 +94,40 @@ a {
   color: #ffde32;
   font-family: "Pacifico";
   font-size: 200px;
+}
+
+@media (max-width: 768px) {
+  .body{
+    align-items: center;
+  }
+  .intro {
+    font-size: 50px; /* 缩小字体 */
+    padding: 20px; /* 增加内边距 */
+  }
+
+  .nav-icon img {
+    width: 50px; /* 减小导航图标大小 */
+  }
+
+  .shell h1 {
+    font-size: 80px; /* 缩小主标题字体 */
+  }
+
+  .text {
+    height: auto; /* 根据内容自适应高度 */
+    padding: 20px; /* 添加内边距 */
+  }
+
+  .text h1 {
+    font-size: 50px; /* 缩小次标题字体 */
+  }
+
+  .heading {
+    font-size: 100px; /* 缩小装饰性标题 */
+    transform: translateY(-15vh) translateZ(-1px); /* 调整位置 */
+  }
+
+  .image {
+    transform: translateZ(-2px) scale(1.2); /* 减小图片缩放比例 */
+  }
 }
