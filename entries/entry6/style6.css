@@ -9,98 +9,126 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-a{
-    text-decoration: none;
-    color: #1c1f26;
-}
-
-
-.container {
-    width: 100vw;
-    height: 100vh;
+.navbar {
+    position: absolute; /* 或 fixed，如果希望其固定在屏幕顶部 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent; /* 透明背景 */
+    z-index: 1000; /* 确保在其他内容之上 */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f4f4f4;
+    padding: 0; /* 确保无多余间距 */
+    margin-top: 20px; /* 确保无多余间距 */
+  }
+
+.nav-logo {
+  max-width: 150px; /* Adjust the size of the image */
+  height: 50px;
+  cursor: pointer;
 }
 
-h1, p {
-    position: relative;
-    z-index: 10; /* Ensure text is above the image */
+.nav-logo:hover {
+  opacity: 0.8; /* Optional hover effect */
+  transform: scale(0.8);
+  transition: transform 0.3s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  color: #1c1f26;
+}
+
+.container {
+  margin-top: 0; /* Remove any top margin */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+p {
+  margin-top: 0; /* Remove any top margin */
+  position: relative;
+  z-index: 10; /* Ensure text is above the image */
 }
 
 .image-grid {
-    position: absolute;
-    z-index: 1;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    grid-template-columns: repeat(4, 1fr); /* Default is 4 images per row */
-    gap: 10px;
-    width: 100%;
-    height: 100vh;
+  position: absolute;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  grid-template-columns: repeat(4, 1fr); /* Default is 4 images per row */
+  gap: 10px;
+  width: 100%;
+  height: 100vh;
 }
 
 .image-grid img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    animation: rotate 10s linear infinite;
-    opacity: 0.5; /* Optional: Reduce opacity for background images */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  animation: rotate 10s linear infinite;
+  opacity: 0.5; /* Optional: Reduce opacity for background images */
 }
 
 .box {
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    display: none; /* Initially hide all boxes */
+  margin-top: 0; /* Remove any top margin */
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  display: none; /* Initially hide all boxes */
 }
 
 @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Display first box only on larger screens */
 @media (min-width: 1024px) {
-    #box1 {
-        display: flex;
-        flex-direction: column; 
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-size: 8vw;
-        text-align: center;
-    }
-    #box1 h1 {
-        font-size: 30vw;
-        font-family:"Abril Fatface" ;
-        margin: 0;
-    }
-    
-    #box1 p {
-        font-size: 3vw;
-        font-family:"Abhaya Libre" ;
-        margin: 0;
-    }
+  #box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 8vw;
+    text-align: center;
+  }
+  #box1 h1 {
+    font-size: 30vw;
+    font-family: "Abril Fatface";
+    margin: 0;
+  }
+
+  #box1 p {
+    font-size: 3vw;
+    font-family: "Abhaya Libre";
+    margin: 0;
+  }
 }
 
 /* Display second box on slightly smaller screens */
 @media (max-width: 1024px) {
-    #box1 {
-        display: none;
-    }
-    #box2 {
+  #box1 {
+    display: none;
+  }
+  #box2 {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -109,100 +137,99 @@ h1, p {
     background-color: #1c1f26;
     text-align: center;
     color: dodgerblue; /* 蓝色字体 */
-    }
+  }
 
-    #box2 h1 {
-        font-size: 25vw;
-        font-family:"Abril Fatface" ;
-        margin: 0;
-    }
-    
-    #box2 p {
-        font-size: 3vw;
-        font-family:"Abhaya Libre" ;
-        margin: 0;
-        color: #ffffff;
-    }
+  #box2 h1 {
+    font-size: 25vw;
+    font-family: "Abril Fatface";
+    margin: 0;
+  }
 
-    .image-grid img:nth-child(10),
-    .image-grid img:nth-child(11),
-    .image-grid img:nth-child(12) {
-        display: none; /* Hide images after the 9th */
-    }
-    .image-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-    }
-    
+  #box2 p {
+    font-size: 3vw;
+    font-family: "Abhaya Libre";
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .image-grid img:nth-child(10),
+  .image-grid img:nth-child(11),
+  .image-grid img:nth-child(12) {
+    display: none; /* Hide images after the 9th */
+  }
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  }
 }
 
 /* Display third box at smaller screen width */
 @media (max-width: 768px) {
-    #box2 {
-        display: none;
-    }
-    #box3 {
-        display: flex;
-        flex-direction: column; 
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-size: 8vw;
-        text-align: center;
-    }
-    #box3 h1 {
-        font-size: 25vw;
-        font-family:"Abril Fatface" ;
-        margin: 0;
-    }
-    
-    #box3 p {
-        font-size: 3vw;
-        font-family:"Abhaya Libre" ;
-        margin: 0;
-    }
-    .image-grid img:nth-child(n+7) {
-        display: none; /* Hide images after the 6th */
-    }
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 images per row */
-    }
+  #box2 {
+    display: none;
+  }
+  #box3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 8vw;
+    text-align: center;
+  }
+  #box3 h1 {
+    font-size: 25vw;
+    font-family: "Abril Fatface";
+    margin: 0;
+  }
+
+  #box3 p {
+    font-size: 3vw;
+    font-family: "Abhaya Libre";
+    margin: 0;
+  }
+  .image-grid img:nth-child(n + 7) {
+    display: none; /* Hide images after the 6th */
+  }
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  }
 }
 
 /* Display fourth box on the smallest screens */
 @media (max-width: 576px) {
-    #box3 {
-        display: none;
-    }
-    #box4 {
-        display: flex;
-        flex-direction: column; 
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        font-size: 6vw;
-        background-color: #1c1f26;
-        text-align: center;
-        color: dodgerblue; /* 蓝色字体 */
-        }
-    
-        #box4 h1 {
-            font-size: 25vw;
-            font-family:"Abril Fatface" ;
-            margin: 0;
-        }
-        
-        #box4 p {
-            font-size: 3vw;
-            font-family:"Abhaya Libre" ;
-            margin: 0;
-            color: #ffffff;
-        }
+  #box3 {
+    display: none;
+  }
+  #box4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 6vw;
+    background-color: #1c1f26;
+    text-align: center;
+    color: dodgerblue; /* 蓝色字体 */
+  }
 
-        .image-grid img:nth-child(n+4) {
-            display: none; /* Hide images after the 3rd */
-        }
-        .image-grid {
-            grid-template-columns: repeat(1, 1fr); /* 1 image per row */
-        }
+  #box4 h1 {
+    font-size: 25vw;
+    font-family: "Abril Fatface";
+    margin: 0;
+  }
+
+  #box4 p {
+    font-size: 3vw;
+    font-family: "Abhaya Libre";
+    margin: 0;
+    color: #ffffff;
+  }
+
+  .image-grid img:nth-child(n + 4) {
+    display: none; /* Hide images after the 3rd */
+  }
+  .image-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 image per row */
+  }
 }
