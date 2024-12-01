@@ -11,18 +11,16 @@
   src: url(./fonts/Notable/Notable-Regular.ttf);
 }
 
-/* 全局样式 */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 body {
+  margin: 0;
+  height: 100vh;
+  background: #111;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #000;
+  flex-direction: column;
+  overflow-x: hidden; /* 仅隐藏横向溢出 */
+  overflow-y: auto; /* 启用纵向滚动 */
 }
 
 .navbar {
@@ -33,6 +31,7 @@ body {
   width: 100%;
   margin-top: 0; /* Remove margin-top */
   padding: 20px 0; /* Add padding if needed */
+  z-index: 1000; /* 确保在页面最顶层 */
 }
 
 .nav-logo {
@@ -46,87 +45,76 @@ body {
   transform: scale(0.8);
   transition: transform 0.3s ease-in-out;
 }
-/* 容器样式 */
-.candy-container {
-  position: relative; /* 添加相对定位 */
-  display: inline-block;
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  z-index: 10;
 }
 
-/* 糖果图片样式 */
-.candy {
-  width: 150px;
-  height: auto;
-  transition: transform 0.3s ease;
-  cursor: pointer; /* 添加指针样式 */
+.title {
+  font-size: 3rem;
+  margin-top: 200px;
+  font-family: "Abril Fatface", serif;
+  position: relative;
 }
-.candy:hover {
-  transform: scale(1.5);
-}
-span {
-  /* 这里可以直接使用外部引入的字体样式 */
 
-  color: #fff;
-  align-items: center;
-  justify-content: center;
-  /* 这是字体的描边第一个值是粗细,第二个值是颜色 */
-  -webkit-text-stroke: 3px #000;
-  /* 单词大写 */
-  text-transform: uppercase;
-  /* 文字阴影 */
-  text-shadow: 0 0 #f3c623, 0 0 #f2aaaa;
-  /* 让文字先向下走自身高度的50%,然后顺时针旋转4度 */
-  transform: translate(0, 50%) rotate(4deg);
-  /* 动画 名称 时长 第三个值是延迟时长 calc是自动计算的方法,里面写的var()函数是会调用我们事先自定义好的属性值,我们刚才给span添加的--i:*就是一个自定义属性,var()能调用到相应的span的定义好的属性值,然后在*120ms来计算每个文字的延迟时长省时省力,第四个值是两头慢,中间快,第五个值是无线运动 */
-  animation: move 5s calc(var(--i) * 120ms) ease-in-out infinite;
+.content {
+  font-size: 1.2rem;
+  text-align: left;
+  font-family: "Poppins", serif;
+  line-height: 1.8;
 }
-/* 悬停字符样式 */
-.emotion {
-  font-family: "Abril Fatface", sans-serif;
-  font-size: 10vw;
-  color: #fff;
+
+.item {
   position: absolute;
-  left: 50%;
-  top: 50%; /* 设置为相对于糖果图片居中 */
-  transform: translate(-50%, -50%); /* 水平和垂直居中 */
-  transform: translateX(-100%);
-  opacity: 0;
-  animation: bounce 5s ease forwards;
-  line-height: 10; /* 调整行距 */
-}
-.emotion:nth-child(1) {
-  top: -30px; /* 调整每个字符的top值，增加行距 */
-}
-.emotion:nth-child(2) {
-  top: -100px;
-}
-.emotion:nth-child(3) {
-  top: -170px;
-}
-.emotion:nth-child(4) {
-  top: -240px;
+  top: -10%; /* 从屏幕顶部外开始掉落 */
+  font-size: 24px;
+  color: #fff;
+  animation: falling 5s linear forwards; /* 调整掉落速度为5秒 */
+  z-index: 0; /* 确保图片在文字下面 */
 }
 
-/* 悬停时显示字符 */
-.candy-container:hover .emotion {
-  opacity: 1;
-  animation: bounce 6s calc(var(--i) * 0.2s) ease-in-out infinite;
+.item img {
+  width: 80px; /* 限制图片宽度 */
+  height: auto; /* 保持宽高比 */
 }
 
-/* 弹跳动画 */
-@keyframes bounce {
-  0%,
+@keyframes falling {
+  0% {
+    transform: translateY(-10%) scale(1);
+    opacity: 1; /* 图片完全可见 */
+  }
+  80% {
+    opacity: 0.5; /* 提前开始淡出 */
+  }
   100% {
-    text-shadow: 0 0 #f3c623, 0 0 #f2aaaa;
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0; /* 图片完全消失 */
   }
-  33.33% {
-    text-shadow: 0 60px #f37121, 0 120px #f2aaaa;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+    padding: 0 15px;
   }
-  50% {
-    text-shadow: 0 0 #8fc0a9, 0 0 #84a9ac;
-    /* 这个跟刚才写的刚好相反动画到一半向上走自身的一半,逆时针旋转4度 */
-    transform: translate(0, -50%) rotate(-4deg);
+  .content {
+    font-size: 1rem;
+    padding: 0 15px;
   }
-  66.66% {
-    text-shadow: 0 -60px #d54062, 0 -120px #8fc0a9;
+}
+/* Small Screen Responsive Design */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+    padding: 0 10px;
+  }
+  .content {
+    font-size: 0.9rem;
+    padding: 0 10px;
   }
 }
