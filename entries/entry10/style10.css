@@ -175,18 +175,4 @@ nav {
 .tile.flipped {
   transform: rotateX(180deg);
 }
-@media (max-width: 768px) {
-  .tile-front::before,
-  .tile-back::before {
-    background-size: 100% 100%; /* 缩小背景图以适应小屏幕 */
-    background-position: center; /* 保证图片居中 */
-  }
-}
 
-@media (min-width: 769px) {
-  .tile-front::before,
-  .tile-back::before {
-    background-size: 600% 600%; /* 默认尺寸 */
-    background-position: inherit; /* 保持原始设定 */
-  }
-}
