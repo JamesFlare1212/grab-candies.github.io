@@ -24,11 +24,12 @@ function setup() {
   decreaseButton = createButton("<");
   decreaseButton.position(width / 2 - 100, height / 2 + 400);
   decreaseButton.style("font-size", "32px");
-  decreaseButton.style("background-color", "#FF6521");
+  decreaseButton.style("background-color", "#AA2E84");
   decreaseButton.style("color", "white");
   decreaseButton.style("border", "none");
   decreaseButton.style("padding", "10px 22px");
   decreaseButton.style("border-radius", "40%");
+  decreaseButton.style("cursor", "pointer");
   decreaseButton.mousePressed(() => {
     if (currentValue > minValue) {
       currentValue--;
@@ -46,7 +47,7 @@ function setup() {
   increaseButton = createButton(">");
   // increaseButton.position(width / 2 + 50, height / 2 + 400);
   increaseButton.style("font-size", "32px");
-  increaseButton.style("background-color", "#FF6521");
+  increaseButton.style("background-color", "#AA2E84");
   increaseButton.style("color", "white");
   increaseButton.style("border", "none");
   increaseButton.style("padding", "10px 20px");
