@@ -176,3 +176,12 @@ nav {
   transform: rotateX(180deg);
 }
 
+@media (max-width: 768px) {
+  .tile-front::before {
+    background-image: url("./imgs/front1.png"); /* 手机屏幕的前图片 */
+  }
+
+  .tile-back::before {
+    background-image: url("./imgs/back1.png"); /* 手机屏幕的后图片 */
+  }
+}
