@@ -15,6 +15,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  cursor: url('./imgs/hand.svg') 12 12, auto; /* x 和 y 偏移量，表示热点位置 */
 }
 
 .container {
@@ -44,6 +45,7 @@ body {
 
 .candy:hover {
   transform: rotate(360deg); /* 旋转效果 */
+  cursor: url('./imgs/hand2.svg') 12 12, auto; /* x 和 y 偏移量，表示热点位置 */
 }
 
 #candy1 {
