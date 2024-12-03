@@ -82,16 +82,6 @@ function windowResized() {
   redraw();
 }
 
-function styleButton(button) {
-  button.style("font-size", "32px");
-  button.style("background-color", "#FF6521");
-  button.style("color", "white");
-  button.style("border", "none");
-  button.style("border-radius", "50%"); // 圆形按钮
-  button.style("padding", "10px 20px");
-  button.style("cursor", "pointer");
-}
-
 function positionButtons() {
   let buttonOffsetY = height - 50;
   decreaseButton.position(width / 2 - 100, buttonOffsetY);
