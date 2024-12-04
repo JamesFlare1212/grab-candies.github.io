@@ -7,6 +7,10 @@
   font-family: Abhaya Libre;
   src: url(./fonts/Abhaya_Libre/AbhayaLibre-Regular.ttf);
 }
+@font-face {
+  font-family: Poppins;
+  src: url(./fonts/Poppins/Poppins-Regular.ttf);
+}
 
 body {
   margin: 0;
@@ -116,7 +120,7 @@ p {
 
   #box1 p {
     font-size: 3vw;
-    font-family: "Abhaya Libre";
+    font-family: "Poppins";
     margin: 0;
   }
 }
@@ -147,7 +151,7 @@ p {
 
   #box2 p {
     font-size: 3vw;
-    font-family: "Abhaya Libre";
+    font-family: "Poppins";
     margin: 0;
     color: #ffffff;
   }
@@ -184,7 +188,7 @@ p {
 
   #box3 p {
     font-size: 3vw;
-    font-family: "Abhaya Libre";
+    font-family: "Poppins";
     margin: 0;
   }
   .image-grid img:nth-child(n + 7) {
@@ -221,7 +225,7 @@ p {
 
   #box4 p {
     font-size: 3vw;
-    font-family: "Abhaya Libre";
+    font-family: "Poppins";
     margin: 0;
     color: #ffffff;
   }
